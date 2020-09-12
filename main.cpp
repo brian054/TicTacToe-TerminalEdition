@@ -36,6 +36,7 @@ void updateBoard(int board[])
     cout << endl;
 } // updateBoard()
 
+// TODO: Clean this up with for loops 
 bool checkWin(int board[], int player) {
     if (board[0] == player) {
         if (board[1] == player && board[2] == player) {
