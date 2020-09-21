@@ -39,52 +39,35 @@ void updateBoard(int board[])
 // TODO: Clean this up with for loops 
 bool checkWin(int board[], int player) {
     if (board[0] == player) {
-        if (board[1] == player && board[2] == player) {
-            // P1 wins horiz
-            cout << "Player " << player << " Wins!" << endl;
-            return true;
-        }
-        if (board[3] == player && board[6] == player) {
-            // P1 wins vert 
-            cout << "Player " << player << " Wins!" << endl;
-            return true;
-        }
-        if (board[4] == player && board[8] == player) {
-            // P1 wins diag
+        if ((board[1] == player && board[2] == player) || (board[3] == player && board[6] == player) || (board[4] == player && board[8] == player)) {
+            // P wins horiz
             cout << "Player " << player << " Wins!" << endl;
             return true;
         }
     }
 
-    if (board[1] == player) {
-        if (board[4] == player && board[7] == player) {
-            // P1 wins vert
-            cout << "Player " << player << " Wins!" << endl;
-            return true;
-        }
+    if (board[1] == player && board[4] == player && board[7] == player) {
+        // P wins vert
+        cout << "Player " << player << " Wins!" << endl;
+        return true;
     }
 
     if (board[2] == player) {
-        if (board[5] == player && board[8] == player) {
-            // P1 wins vert
-            cout << "Player " << player << " Wins!" << endl;
-            return true;
-        }
-        if (board[4] == player && board[6] == player) {
-            // P1 wins diag
+        if ((board[5] == player && board[8] == player) || (board[4] == player && board[6] == player)) {
+            // P wins vert
             cout << "Player " << player << " Wins!" << endl;
             return true;
         }
     }
 
     if (board[3] == player && board[4] == player && board[5] == player) {
-        // P1 wins horiz
+        // P wins horiz
         cout << "Player " << player << " Wins!" << endl;  
         return true;
     }
 
     if (board[6] == player && board[7] == player && board[8] == player) {
-        // P1 wins horiz
+        // P wins horiz
         cout << "Player " << player << " Wins!" << endl;
         return true;
     }
